@@ -9,7 +9,7 @@ namespace UIManagement
 
         static UIManager()
         {
-            _windows        = new();
+            _windows = new();
         }
 
         public static void Register(BaseWindow window)
@@ -17,7 +17,7 @@ namespace UIManagement
             Type type = window.GetType();
 
             if (!_windows.TryAdd(type, window))
-                throw new WindowAlreadyRegistredException(type.ToString());
+                throw new RegistrationException($"Window already registred: {type.ToString()}");
         }
 
         public static void Show<T>() where T : BaseWindow => Show<T>(true);
@@ -40,7 +40,7 @@ namespace UIManagement
             }
             catch
             {
-                throw new WindowNotRegistredException(type.ToString());
+                throw new RegistrationException($"Window not registred: {type.ToString()}");
             }
         }
     }

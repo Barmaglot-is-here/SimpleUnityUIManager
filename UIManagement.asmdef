@@ -1,12 +1,8 @@
 {
     "name": "UIManagement",
-    "rootNamespace": "",
+    "rootNamespace": "UIManagement",
     "references": [],
-    "includePlatforms": [
-        "Editor",
-        "WindowsStandalone32",
-        "WindowsStandalone64"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
